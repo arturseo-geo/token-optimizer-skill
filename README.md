@@ -1,57 +1,34 @@
 # token-optimizer-skill
 
-> **Also available as part of [claude-code-skills](https://github.com/arturseo-geo/claude-code-skills)** -- a collection of 12 production-tested skills for Claude Code.
-
 > Built by **[Artur Ferreira](https://github.com/arturseo-geo)** @ **[The GEO Lab](https://thegeolab.net)**
-> [X @TheGEO_Lab](https://x.com/TheGEO_Lab) | [LinkedIn](https://linkedin.com/in/arturgeo) | [Reddit](https://www.reddit.com/user/Alternative_Teach_74/)
+> [𝕏 @TheGEO_Lab](https://x.com/TheGEO_Lab) · [LinkedIn](https://linkedin.com/in/arturgeo) · [Reddit](https://www.reddit.com/user/Alternative_Teach_74/)
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Licence](https://img.shields.io/badge/licence-MIT-green)
+![Savings](https://img.shields.io/badge/typical_savings-60--80%25-orange)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-skill-blueviolet)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/arturseo-geo/token-optimizer-skill/blob/main/CONTRIBUTING.md)
 
-Reduce Claude Code token consumption and API costs without sacrificing output quality. Covers model routing, extended thinking tuning, prompt caching, subagent cost management, and session-level cost tracking.
+Token cost optimisation skill for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — model routing, extended thinking tuning, prompt caching, subagent cost management, CLAUDE.md audit, MCP token audit, and per-session cost tracking. Typically reduces costs by 60-80%.
 
-## Install
+## Who This Is For
 
-```bash
-git clone https://github.com/arturseo-geo/token-optimizer-skill.git ~/.claude/skills/token-optimizer
-```
+- **Anyone paying for Claude Code** who wants the same quality for less
+- **Team leads** managing Claude Code costs across multiple developers
+- **Power users** running long sessions who want to understand where tokens go
+- **Agent builders** optimising multi-agent pipelines for cost efficiency
 
-## File Structure
+## What Makes This Different
 
-```
-token-optimizer-skill/
-├── SKILL.md                  — Core skill: settings, routing, patterns, checklists
-├── README.md                 — This file
-├── CONTRIBUTING.md           — Contribution guidelines
-├── SECURITY.md               — Security policy
-├── LICENSE                   — MIT licence
-├── .gitignore
-├── references/
-│   ├── model-routing.md      — Opus vs Sonnet vs Haiku: cost, quality, decision framework
-│   ├── thinking-tokens.md    — Extended thinking costs, tuning, when it helps vs hurts
-│   ├── caching.md            — Prompt caching mechanics, cache hit optimisation
-│   └── cost-tracking.md      — Per-session, per-task, per-project cost tracking
-└── .github/
-    ├── ISSUE_TEMPLATE/
-    │   ├── bug-report.md     — Bug report template
-    │   └── platform-update.md — Pricing/model update template
-    └── pull_request_template.md — PR template
-```
+Most cost advice is "use a cheaper model." This skill gives you a complete optimisation framework:
 
-## What This Skill Covers
-
-| Topic | Location |
-|---|---|
-| Token cost breakdown | SKILL.md |
-| Settings tuning (MAX_THINKING_TOKENS, subagent model, compaction) | SKILL.md |
-| Model routing strategy | SKILL.md + references/model-routing.md |
-| Prompt efficiency patterns | SKILL.md |
-| Caching strategies | SKILL.md + references/caching.md |
-| CLAUDE.md audit checklist | SKILL.md |
-| MCP token audit | SKILL.md |
-| Extended thinking tuning | SKILL.md + references/thinking-tokens.md |
-| Batch request optimisation | SKILL.md |
-| Cost-per-session analysis | SKILL.md + references/cost-tracking.md |
+- ✅ **Model routing strategy** — Opus vs Sonnet vs Haiku decision framework with cost/quality tradeoffs
+- ✅ **Extended thinking tuning** — when it helps vs. hurts, MAX_THINKING_TOKENS sweet spots
+- ✅ **Prompt caching mechanics** — how cache hits work, how to optimise for them
+- ✅ **Subagent cost management** — CLAUDE_CODE_SUBAGENT_MODEL routing for background agents
+- ✅ **CLAUDE.md audit checklist** — find and fix token waste in your project instructions
+- ✅ **MCP token audit** — tool descriptions that silently consume context
+- ✅ **Per-session cost tracking** — know exactly what each session costs
 
 ## Quick Start
 
@@ -69,24 +46,39 @@ Add these three settings to `.claude/settings.json` for immediate savings:
 
 This alone typically reduces costs by 60-80% compared to Opus defaults.
 
+## Install
+
+```bash
+# Clone
+git clone https://github.com/arturseo-geo/token-optimizer-skill.git ~/.claude/skills/token-optimizer
+
+# Or install all 12 skills at once
+git clone https://github.com/arturseo-geo/claude-code-skills.git
+cp -r claude-code-skills/skills/token-optimizer ~/.claude/skills/
+```
+
+## File Structure
+
+```
+token-optimizer-skill/
+├── SKILL.md                  — Core skill: settings, routing, patterns, checklists
+├── references/
+│   ├── model-routing.md      — Opus vs Sonnet vs Haiku: cost, quality, decision framework
+│   ├── thinking-tokens.md    — Extended thinking costs, tuning, when it helps vs hurts
+│   ├── caching.md            — Prompt caching mechanics, cache hit optimisation
+│   └── cost-tracking.md      — Per-session, per-task, per-project cost tracking
+└── .github/                  — Issue templates and PR template
+```
+
 ## Related Repos
 
-- [claude-code-skills](https://github.com/arturseo-geo/claude-code-skills) -- Full collection of 12 skills
-- [mcp-wordpress-setup](https://github.com/arturseo-geo/mcp-wordpress-setup) -- WordPress MCP server setup
+- [claude-code-skills](https://github.com/arturseo-geo/claude-code-skills) — Full collection of 12 skills
+- [context-engineering-skill](https://github.com/arturseo-geo/context-engineering-skill) — Companion skill for context window management
 
-## Acknowledgments
+## Contributing
 
-Built following the open-source best practice approach -- reading community work for inspiration, writing original content, and crediting every source.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. PRs welcome.
 
-**Based on:**
-- [Agent Skills specification](https://github.com/anthropics/skills) by Anthropic (Apache 2.0)
+---
 
-All skill content is original writing. No files were copied or adapted from any source.
-
-## Author
-
-Built and maintained by **[Artur Ferreira](https://github.com/arturseo-geo)** @ **[The GEO Lab](https://thegeolab.net)**
-
-## License
-
-[MIT](LICENSE)
+Built and maintained by **[Artur Ferreira](https://github.com/arturseo-geo)** @ **[The GEO Lab](https://thegeolab.net)** · [MIT License](LICENSE)
