@@ -81,4 +81,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. PRs welcome.
 
 ---
 
-Built and maintained by **[Artur Ferreira](https://github.com/arturseo-geo)** @ **[The GEO Lab](https://thegeolab.net)** · [MIT License](LICENSE)
+Built and maintained by **[Artur Ferreira](https://github.com/arturseo-geo)** @ **[TheGEOLab](https://thegeolab.net)** · [MIT License](LICENSE)
